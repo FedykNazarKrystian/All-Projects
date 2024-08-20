@@ -1,0 +1,14 @@
+{% extends 'receipts_app/layout.html' %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block body %}
+    <h1>HOME PAGE</h1>
+    <ul>
+        {% for item in receipts %}
+            <li><a href="{% url 'receipt' item.id %}">{{ item.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

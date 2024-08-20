@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>Breaking News</p>
+    {% for item in context %}
+    	<h2>{{ item.title }}</h2>
+        <h3>{{ item.anons }}</h3>
+    {% endfor %}
+
+
+</body>
+</html>
+

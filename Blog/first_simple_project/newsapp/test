@@ -1,0 +1,19 @@
+class Car():
+    brand (= це налаштування самих полів.)
+    year
+
+    def __str__(year, brand):
+        self.brand = brand
+        self.year = year
+
+
+Car Mercedes = new Car()
+Mercedes.brand
+
+
+
+
+
+
+
+

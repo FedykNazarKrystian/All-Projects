@@ -1,0 +1,13 @@
+{% extends 'receipts_app/layout.html' %}
+
+{% block title %}
+    {{ receipt.title }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ receipt_list.title }}</h1>
+    <p><strong>Description:</strong>{{ receipt_list.description }}</p>
+    {% if user.is_authenticated and user == receipt_list.author %}
+        <a href="{% url 'edit_receipts' receipt_list.id %}">Edit</a>
+    {% endif %}
+{% endblock %}

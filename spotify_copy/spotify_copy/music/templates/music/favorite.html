@@ -1,0 +1,16 @@
+{% extends 'music/layout.html' %}
+
+{% block title %} Favorite Songs {% endblock %}
+
+{% block body %}
+    <h1>Favorite Songs</h1>
+    <ul>
+        {% for song in favorite_songs %}
+            <li><a href="{% url 'listening' song.id %}">{{ song.song.title }} by {{ song.song.artist }}</a></li>
+            <form action="{% url 'remove_from_favorites' song.id %}" method="post">
+                    {% csrf_token %}
+                    <button>Remove from Favorite </button>
+                </form>
+        {% endfor %}
+    </ul>
+{% endblock %}

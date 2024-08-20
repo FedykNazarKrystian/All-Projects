@@ -1,0 +1,14 @@
+{% extends 'receipts_app/layout.html' %}
+
+{% block title %}
+    Add Receipt
+{% endblock %}
+
+{% block body %}
+    <h1>Add Receipt</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Add</button>
+    </form>
+{% endblock %}

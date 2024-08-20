@@ -1,0 +1,21 @@
+{% extends 'contacts/layout.html' %}
+
+{% block title %}Contact List{% endblock %}
+
+{% block body %}
+<h1>Contact List</h1>
+<ul>
+    {% for item in contacts %}
+        <li>
+            <h2>{{ item.name }}</h2>
+            <h3>{{ item.phone_number }}</h3>
+            <p>{{ item.email }}</p>
+            <a href="{% url 'edit_contact' item.id %}">Edit</a>
+            <form action="{% url 'delete_contact' item.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" >Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

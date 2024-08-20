@@ -1,0 +1,20 @@
+{% extends 'myapp/layout.html' %}
+
+{% load static %}
+
+{% block body %}
+<h1>{{ title }}</h1>
+test
+{% include 'myapp/test_block.html' %}
+
+{% for item in values %}
+    <p>{{ item|lower }}</p>
+{% endfor %}
+{% for key, item in objects.items %}
+    <p>{{ key }} : {{ item }}</p>
+{% endfor %}
+{% endblock %}
+
+{% block title %}
+Index
+{% endblock %}

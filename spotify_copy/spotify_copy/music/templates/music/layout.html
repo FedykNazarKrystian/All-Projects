@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'songs' %}">Songs</a></li>
+                <li><a href="{% url 'upload' %}">Upload Song</a></li>
+                <li><a href="{% url 'favorite' %}">Favorite Songs</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% block body %} {% endblock %}
+</body>
+</html>

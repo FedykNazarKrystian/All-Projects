@@ -1,0 +1,18 @@
+{% extends 'myapp/layout.html' %}
+
+{% block body %}
+<h2>Articles</h2>
+
+<ul>
+    {% for item in context %}
+        <li>
+            <h2>{{ item.title }}</h2>
+            <h3>{{ item.anons }}</h3>
+            <p>{{ item.data }}</p>
+            {% if user.is_authenticated and user == item.author%}
+                <a href="{% url 'edit_news' item.pk %}">Edit</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'receipts_app/layout.html' %}
+
+{% block title %}
+    Edit Receipt
+{% endblock %}
+
+{% block body %}
+    <h1>Edit Receipt</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Edit</button>
+    </form>
+{% endblock %}

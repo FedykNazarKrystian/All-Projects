@@ -1,0 +1,10 @@
+{% extends 'myapp/layout.html' %}
+
+{% block body %}
+<h1>Edit News</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Submit</button>
+    </form>
+{% endblock %}

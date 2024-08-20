@@ -1,0 +1,12 @@
+{% extends 'music/layout.html' %}
+
+{% block title %} {{ song.title }} {% endblock %}
+
+{% block body %}
+    <h1>{{ song.title }} by {{ song.artist }}</h1>
+    <audio controls>
+        <source src="{{ song.file.url }}" type="audio/mpeg">
+        Your browser does not support audio
+    </audio>
+
+{% endblock %}

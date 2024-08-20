@@ -1,0 +1,12 @@
+{% extends 'contacts/layout.html' %}
+
+{% block title %}Add New Contact{% endblock %}
+
+{% block body %}
+<h1>Add New Contact</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Add</button>
+    </form>
+{% endblock %}
