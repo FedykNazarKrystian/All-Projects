@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+    <script src="{% static 'main_app/scripts/index.js' %}">
+    </script>
+    <title>Title</title>
+</head>
+<body>
+    <canvas id="temperaturechart" class="chart" style="width:100%;max-width:700px"></canvas>
+    <canvas id="humiditychart" class="chart" style="width:100%;max-width:700px"></canvas>
+    <a href="{% url 'views.export_reading_csv' %}"></a>
+</body>
+</html>
