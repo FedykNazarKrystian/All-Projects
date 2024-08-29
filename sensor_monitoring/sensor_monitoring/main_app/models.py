@@ -7,4 +7,4 @@ class Sensor(models.Model):
 class SensorReading(models.Model):
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE)
     times_temp = models.DateTimeField(auto_now_add=True)
-    value = models.FloatField
+    value = models.FloatField()

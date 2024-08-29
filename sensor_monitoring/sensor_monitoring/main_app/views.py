@@ -13,8 +13,7 @@ def export_reading_csv(request):
     readings = SensorReading.objects.all().value_list('sensor_name', 'times_temp', 'value')
     for r in readings:
         writer.writerow(r)
-        return response
+    return response
 
 def index(request):
-
-    return render(request, '', {'sensor': sensor})
+    return render(request, 'main_app/index.html')

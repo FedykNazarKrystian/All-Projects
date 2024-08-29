@@ -6,10 +6,12 @@ from .models import Sensor, SensorReading
 
 class SensorConsumer(AsyncWebsocketConsumer):
     async def connect(self):
+        print("connection")
         await self.accept()
 
+
     async def disconnect(self, close_code):
-        pass
+        print("disconnection")
 
     async def receive(self, text_data):
         data = json.loads(text_data)
@@ -34,3 +36,4 @@ class SensorConsumer(AsyncWebsocketConsumer):
             'max_value': max_value,
             'med_value': med_value
         }))
+        print("receive")
