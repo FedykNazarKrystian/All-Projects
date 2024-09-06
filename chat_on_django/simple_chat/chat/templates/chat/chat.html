@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatik</title>
+</head>
+<body>
+    <h1>Chatik</h1>
+    <textarea id="chat_log" cols="100" rows="20"></textarea>
+    <input type="text" id="input">
+    <button id="button">Send</button>
+
+    <script>
+        const chat_socket = new WebSocket('ws://' + window.location.host + '/ws/chat/')
+        chat_socket.onmessage = function (event) {
+            const data = JSON.parse(event.data);
+            document.querySelector('#chat_log').value += (data.message + '\n');
+        };
+        chat_socket.onclose = function () {
+            console.error('Chat socket closed');
+        };
+        document.querySelector('#button').addEventListener('click', function () {
+            const message = document.querySelector('#input').value;
+            chat_socket.send(JSON.stringify({message: message}));
+            document.querySelector('#input').value = '';
+        });
+
+    </script>
+</body>
+</html>
