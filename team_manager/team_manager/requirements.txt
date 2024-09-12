@@ -1,0 +1,11 @@
+Django
+djangorestframework
+channels
+psycopg
+redis
+celery
+django-crispy-forms
+pytest
+gunicorn
+sentry-sdk
+docker
